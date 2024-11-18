@@ -1,3 +1,10 @@
+function initGame() {
+    let overlay = document.getElementById('overlay');
+    overlay.style.display = "none";
+    
+    generateWord();
+}
+
 async function generateWord() {
     try {
         let apiData = await fetch('https://random-word-api.herokuapp.com/word?length=5');
@@ -10,7 +17,3 @@ async function generateWord() {
         console.error(e);
     }
 }
-
-window.addEventListener('load', function () {
-    generateWord();
-})
